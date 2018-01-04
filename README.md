@@ -1,7 +1,7 @@
 # CryptoBot
 CryptoBot that can detect arbitrages and use them to make profit.
 
-![Architectuur CrypoBot](Architectuur CrypotBot.jpg)
+![Architecture CryptoBot](Architecture_CryptoBot.jpg)
 
 ### TODO
 - Implement abstract price poller 
