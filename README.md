@@ -1,15 +1,15 @@
 # CryptoBot
 CryptoBot that can detect arbitrages and use them to make profit.
 
-![Klassendiagram](Klassendiagram.png)
+![Architectuur CrypoBot](Architectuur CrypotBot.jpg)
 
 ### TODO
-- Bitrex API implementeren
-- Poliniex API implementeren
-- Berekening toevoegen in de ArbitrageDetector.cs + Unittest
-- Frontend toevoegen zodat simulatie inzichtelijk wordt
-- Docker configureren
-- Uitrollen
+- Implement abstract price poller 
+- Configure Poliniex API
+- Configure Bitrex API
+- Implement ArbitrageDetector
+- Add frontend to show calculated arbitrages
+- Configure docker
 
 ### Deploy
 - Docker
