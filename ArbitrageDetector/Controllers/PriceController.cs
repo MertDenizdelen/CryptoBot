@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
-using ArbitrageDetector.Models;
+using CryptoBot.Shared;
 
 namespace ArbitrageDetector.Controllers
 {
@@ -8,7 +8,7 @@ namespace ArbitrageDetector.Controllers
     public class PriceController : Controller
     {
         [HttpPost]
-        public void NewPrice([FromBody] Price price)
+        public void NewPrice([FromBody] PriceModel price)
         {
             Console.WriteLine(price);
         }

@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricePoller", "PricePoller\PricePoller.csproj", "{6461F7F4-82DF-49EC-BBAF-9FC11F913141}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PricePoller", "PricePoller\PricePoller.csproj", "{6461F7F4-82DF-49EC-BBAF-9FC11F913141}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbitrageDetector", "ArbitrageDetector\ArbitrageDetector.csproj", "{2FA8B3F8-6100-48D2-84AC-084CDF6C3AB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArbitrageDetector", "ArbitrageDetector\ArbitrageDetector.csproj", "{2FA8B3F8-6100-48D2-84AC-084CDF6C3AB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{AFA72B27-1436-4CCC-A36A-8252E7D01797}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2FA8B3F8-6100-48D2-84AC-084CDF6C3AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FA8B3F8-6100-48D2-84AC-084CDF6C3AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FA8B3F8-6100-48D2-84AC-084CDF6C3AB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA72B27-1436-4CCC-A36A-8252E7D01797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA72B27-1436-4CCC-A36A-8252E7D01797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA72B27-1436-4CCC-A36A-8252E7D01797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA72B27-1436-4CCC-A36A-8252E7D01797}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
