@@ -7,7 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PricePoller", "PricePoller\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArbitrageDetector", "ArbitrageDetector\ArbitrageDetector.csproj", "{2FA8B3F8-6100-48D2-84AC-084CDF6C3AB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{AFA72B27-1436-4CCC-A36A-8252E7D01797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{AFA72B27-1436-4CCC-A36A-8252E7D01797}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1FDB9575-BD0E-48CF-BCD2-BC1D181FCDB0}"
+	ProjectSection(SolutionItems) = preProject
+		ArbitrageDetector_Dockerfile = ArbitrageDetector_Dockerfile
+		docker-compose.yml = docker-compose.yml
+		PricePoller_Dockerfile = PricePoller_Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -23,15 +23,17 @@ namespace PricePoller
 
         public async Task PushPrice(PriceModel price)
         {
+            var url = _configuration["PUSH_URL"];
+
             try
             {
-                var url = _configuration["PUSH_URL"];
                 var body = new StringContent(JsonConvert.SerializeObject(price), Encoding.UTF8, "application/json");
                 await new HttpClient().PostAsync(url, body);
+                _logger.LogInformation($"Prijs {price.BuyPrice} / {price.SellPrice} verzonden naar de ArbitrageDetector.");
             }
             catch (Exception ex)
             {
-                _logger.LogError("De gevonden prijs kan niet worden verstuurd naar de ArbitrageDetector.", ex);
+                _logger.LogError($"De gevonden prijs kan niet worden verstuurd naar de ArbitrageDetector ({url}).", ex);
             }
         }
     }
