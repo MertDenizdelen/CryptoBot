@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 
 namespace PricePoller
@@ -7,10 +8,10 @@ namespace PricePoller
     {
         private readonly ILogger _logger;
 
-        public MyLogger()
+        public MyLogger(IConfiguration configuration)
         {
             _logger = new LoggerFactory()
-                .AddConsole()
+                .AddConsole(configuration)
                 .CreateLogger("CryptoBot.PricePoller");
         }
 

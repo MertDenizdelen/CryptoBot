@@ -2,10 +2,13 @@
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using PricePoller.MarketApis;
 using System;
 using System.IO;
 using System.Net.Http;
+using System.Runtime.Loader;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 
@@ -15,20 +18,24 @@ namespace PricePoller
     {
         private static MyLogger _logger;
         private static IConfiguration _configuration;
+        private static ManualResetEvent _Shutdown;
 
         static Program()
         {
-            _logger = new MyLogger();
+            _Shutdown = new ManualResetEvent(false);
             _configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .AddEnvironmentVariables()
                 .Build();
+            _logger = new MyLogger(_configuration);
         }
 
         public static void Main(string[] args)
         {
             _logger.LogInformation("Start met het ophalen van nieuwe prijzen...");
+            // Register for shutdown event
+            AssemblyLoadContext.Default.Unloading += OnShutdown;
 
             // Initialise
             var marketApiService = new MarketApiService(_configuration, _logger);
@@ -36,7 +43,7 @@ namespace PricePoller
 
             // Act
             var refreshIntervalInSeconds = int.Parse(_configuration["REFRESH_INTERVAL_IN_SECONDS"]);
-            var timer = new Timer(refreshIntervalInSeconds * 1000);
+            var timer = new System.Timers.Timer(refreshIntervalInSeconds * 1000);
             timer.Elapsed += new ElapsedEventHandler(async (sender, e) =>
             {
                 // Retrieve and push price every n seconds
@@ -49,9 +56,14 @@ namespace PricePoller
             timer.Start();
 
             // Dispose
-            Console.ReadKey(true);
+            _Shutdown.WaitOne();
             timer.Stop();
             _logger.LogInformation("PricePoller is gestopt.");
+        }
+
+        private static void OnShutdown(AssemblyLoadContext obj)
+        {
+            _Shutdown.Set();
         }
     }
 }
