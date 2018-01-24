@@ -8,6 +8,6 @@ namespace PricePoller.MarketApis
     {
         public const string COINBASE = "Coinbase";
         public const string GDAX = "GDAX";
-        public const string BITREX = "Bitrex";
+        public const string BITTREX = "Bittrex";
     }
 }

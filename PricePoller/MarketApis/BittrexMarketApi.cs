@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace PricePoller.MarketApis
 {
-    public class BitrexMarketApi : IMarketApi
+    public class BittrexMarketApi : IMarketApi
     {
-        public BitrexMarketApi(IConfiguration configuration, MyLogger logger) : base(Markets.BITREX, configuration, logger)
+        public BittrexMarketApi(IConfiguration configuration, MyLogger logger) : base(Markets.BITTREX, configuration, logger)
         {
         }
 

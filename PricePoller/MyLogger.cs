@@ -11,7 +11,7 @@ namespace PricePoller
         public MyLogger(IConfiguration configuration)
         {
             _logger = new LoggerFactory()
-                .AddConsole(configuration)
+                .AddConsole(configuration.GetSection("Logging"))
                 .CreateLogger("CryptoBot.PricePoller");
         }
 

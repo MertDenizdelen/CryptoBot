@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ArbitrageDetector": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

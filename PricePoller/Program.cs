@@ -23,9 +23,11 @@ namespace PricePoller
         static Program()
         {
             _Shutdown = new ManualResetEvent(false);
+            var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
             _configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
+                .AddJsonFile($"appsettings.{environmentName}.json", true)
                 .AddEnvironmentVariables()
                 .Build();
             _logger = new MyLogger(_configuration);
