@@ -23,7 +23,7 @@ CryptoBot that can detect arbitrages and use them to make profit.
 #### For production:
 1. Clone this repository in your production environment
 2. Configure the markets and currencies of your choice (note the supported markets). Example configuration is available in docker-compose.yml.
-3. Run `docker-compose up` in the root directory to build and start the docker containers.
+3. Run `docker-compose up -d --build` in the root directory to build and start the docker containers.
 4. Everything should be working.
 
 #### Literature
