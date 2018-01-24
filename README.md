@@ -1,12 +1,13 @@
 # CryptoBot
 CryptoBot that can detect arbitrages and use them to make profit.
 
-![Architecture CryptoBot](Architecture_CryptoBot.jpg)
+<img src="Architecture_CryptoBot.jpg" alt="Architecture CryptoBot" width="50%">
 
 ### Currently supported markets
 - GDAX
 - Coinbase
 - Bittrex
+- Kraken
 
 ### Run & Deploy
 #### prerequisites
@@ -33,3 +34,4 @@ CryptoBot that can detect arbitrages and use them to make profit.
 ### TODO
 - Implement ArbitrageDetector
 - Add frontend to show calculated arbitrages
+- Implement Fees from markets into arbitrage calculation.

@@ -10,8 +10,8 @@ services:
     ports:
       - "3000:80"
   
-  poller-gdax-eth-usd:
-    container_name: poller-gdax-eth-usd
+  poller-gdax-eth-eur:
+    container_name: poller-gdax-eth-eur
     depends_on:
       - arbitrage-detector
     build:
@@ -21,11 +21,11 @@ services:
     environment:
       - MARKET=GDAX
       - FROM_CURRENCY=ETH
-      - TO_CURRENCY=USD
+      - TO_CURRENCY=EUR
       - PUSH_URL=http://arbitrage-detector:80/api/price
   
-  poller-gdax-btc-usd:
-    container_name: poller-gdax-btc-usd
+  poller-gdax-btc-eur:
+    container_name: poller-gdax-btc-eur
     depends_on:
       - arbitrage-detector
     build:
@@ -35,11 +35,11 @@ services:
     environment:
       - MARKET=GDAX
       - FROM_CURRENCY=BTC
-      - TO_CURRENCY=USD
+      - TO_CURRENCY=EUR
       - PUSH_URL=http://arbitrage-detector:80/api/price
 
-  poller-gdax-ltc-usd:
-    container_name: poller-gdax-ltc-usd
+  poller-gdax-bch-eur:
+    container_name: poller-gdax-bch-eur
     depends_on:
       - arbitrage-detector
     build:
@@ -48,12 +48,12 @@ services:
     image: cryptobot/price-poller-image:latest
     environment:
       - MARKET=GDAX
-      - FROM_CURRENCY=LTC
-      - TO_CURRENCY=USD
+      - FROM_CURRENCY=BCH
+      - TO_CURRENCY=EUR
       - PUSH_URL=http://arbitrage-detector:80/api/price
   
-  poller-coinbase-eth-usd:
-    container_name: poller-coinbase-eth-usd
+  poller-coinbase-eth-eur:
+    container_name: poller-coinbase-eth-eur
     depends_on:
       - arbitrage-detector
     build:
@@ -63,11 +63,11 @@ services:
     environment:
       - MARKET=Coinbase
       - FROM_CURRENCY=ETH
-      - TO_CURRENCY=USD
+      - TO_CURRENCY=EUR
       - PUSH_URL=http://arbitrage-detector:80/api/price
 
-  poller-coinbase-btc-usd:
-    container_name: poller-coinbase-btc-usd
+  poller-coinbase-btc-eur:
+    container_name: poller-coinbase-btc-eur
     depends_on:
       - arbitrage-detector
     build:
@@ -77,11 +77,11 @@ services:
     environment:
       - MARKET=Coinbase
       - FROM_CURRENCY=BTC
-      - TO_CURRENCY=USD
+      - TO_CURRENCY=EUR
       - PUSH_URL=http://arbitrage-detector:80/api/price
 
-  poller-coinbase-ltc-usd:
-    container_name: poller-coinbase-ltc-usd
+  poller-coinbase-bch-eur:
+    container_name: poller-coinbase-bch-eur
     depends_on:
       - arbitrage-detector
     build:
@@ -90,6 +90,48 @@ services:
     image: cryptobot/price-poller-image:latest
     environment:
       - MARKET=Coinbase
-      - FROM_CURRENCY=LTC
-      - TO_CURRENCY=USD
+      - FROM_CURRENCY=BCH
+      - TO_CURRENCY=EUR
+      - PUSH_URL=http://arbitrage-detector:80/api/price
+
+  poller-kraken-eth-eur:
+    container_name: poller-kraken-eth-eur
+    depends_on:
+      - arbitrage-detector
+    build:
+      context: .
+      dockerfile: PricePoller_Dockerfile
+    image: cryptobot/price-poller-image:latest
+    environment:
+      - MARKET=Kraken
+      - FROM_CURRENCY=ETH
+      - TO_CURRENCY=EUR
+      - PUSH_URL=http://arbitrage-detector:80/api/price
+
+  poller-kraken-btc-eur:
+    container_name: poller-kraken-btc-eur
+    depends_on:
+      - arbitrage-detector
+    build:
+      context: .
+      dockerfile: PricePoller_Dockerfile
+    image: cryptobot/price-poller-image:latest
+    environment:
+      - MARKET=Kraken
+      - FROM_CURRENCY=BTC
+      - TO_CURRENCY=EUR
+      - PUSH_URL=http://arbitrage-detector:80/api/price
+
+  poller-kraken-bch-eur:
+    container_name: poller-kraken-bch-eur
+    depends_on:
+      - arbitrage-detector
+    build:
+      context: .
+      dockerfile: PricePoller_Dockerfile
+    image: cryptobot/price-poller-image:latest
+    environment:
+      - MARKET=Kraken
+      - FROM_CURRENCY=BCH
+      - TO_CURRENCY=EUR
       - PUSH_URL=http://arbitrage-detector:80/api/price

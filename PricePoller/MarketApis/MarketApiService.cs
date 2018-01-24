@@ -24,6 +24,7 @@ namespace PricePoller.MarketApis
                 new CoinbaseMarketApi(configuration, logger),
                 new GDAXMarketApi(configuration, logger),
                 new BittrexMarketApi(configuration, logger),
+                new KrakenMarketApi(configuration, logger),
             };
 
             _configuration = configuration;
