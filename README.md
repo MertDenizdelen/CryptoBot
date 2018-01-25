@@ -4,10 +4,10 @@ CryptoBot that can detect arbitrages and use them to make profit.
 <img src="Architecture_CryptoBot.jpg" alt="Architecture CryptoBot" width="50%">
 
 ### Currently supported markets
-- GDAX
-- Coinbase
-- Bittrex
-- Kraken
+- GDAX (rate limit: 3 requests/second)
+- Coinbase (rate limit: 10.000/hour -> 2.77 requests/second)
+- Bittrex (rate limit: -)
+- Kraken (rate limit: 1 request every 3 seconds)
 
 ### Run & Deploy
 #### prerequisites
@@ -23,7 +23,7 @@ CryptoBot that can detect arbitrages and use them to make profit.
 #### For production:
 1. Clone this repository in your production environment
 2. Configure the markets and currencies of your choice (note the supported markets). Example configuration is available in docker-compose.yml.
-3. Run `docker-compose up` in the root directory to build and start the docker containers.
+3. Run `docker-compose up -d --build` in the root directory to build and start the docker containers.
 4. Everything should be working.
 
 #### Literature
