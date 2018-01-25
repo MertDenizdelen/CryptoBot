@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ArbitrageDetector.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -24,6 +25,12 @@ namespace ArbitrageDetector
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            // Register arbitrageConfiguration from appsettings.json
+            services.AddTransient((serviceProvider) => Configuration.GetSection("ArbitrageConfiguration").Get<ArbitrageConfiguration>());
+
+            // Register InMemoryPriceRepository to hold prices in memory
+            services.AddSingleton<IInMemoryPriceRepository, InMemoryPriceRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
