@@ -10,7 +10,7 @@ The services are connected over HTTP. This hard connections may be replaced with
 
 Below a diagram that shows the different services and how they are connected to each other:
 
-<img src="Architecture_CryptoBot.jpg" alt="Architecture CryptoBot" width="50%">
+<img src="Architecture_CryptoBot.jpg" alt="Architecture CryptoBot" width="">
 
 ### Currently supported markets
 - GDAX (rate limit: 3 requests/second)
