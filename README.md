@@ -1,6 +1,15 @@
 # CryptoBot
 CryptoBot that can detect arbitrages and use them to make profit.
 
+> "The main goal of this project is to monitor the arbitrages between different markets and different cryptocurrencies.
+The next step is to interact on the arbitrages and execute trades."
+
+This project consist of several different services that have their own task.
+Each service runs inside a docker container.
+The services are connected over HTTP. This hard connections may be replaced with a queue in the future.
+
+Below a diagram that shows the different services and how they are connected to each other:
+
 <img src="Architecture_CryptoBot.jpg" alt="Architecture CryptoBot" width="50%">
 
 ### Currently supported markets
